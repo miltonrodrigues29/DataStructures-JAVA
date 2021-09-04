@@ -15,12 +15,13 @@ public class Runner {
         list.insert(1);
         list.insert(2);
         list.insert(3);
- 
         list.show();
-        list.insertAtStart(69);
+        list.insertAt(2,100);
         list.show();
-        list.insertAtEnd(69);
+        list.deleteAt(100);
         list.show();
+    
+   
         
         
         

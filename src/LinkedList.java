@@ -59,6 +59,37 @@ public class LinkedList {
        
     }
     
+    void insertAt(int index, int data)
+    {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+        
+        if(index == 0)
+        {
+            node.next = head;
+            head = node;
+            System.out.println("Node Inserted at the head");
+        }
+        else
+        {
+        Node n = head;
+        for (int i=0; i<index-1; i++)
+        {
+            n = n.next;
+        }
+        
+        node.next = n.next;
+        n.next = node;
+        System.out.println("Element Inserted at: "+index);
+        }
+        
+        
+        
+                
+      
+    }
+    
     void insertAtEnd(int data)
     {
         Node node  = new Node();
@@ -83,10 +114,41 @@ public class LinkedList {
         }
     }
     
+    
+    void deleteAt(int index)
+    {
+       try
+       {
+           if (index == 0)
+        {
+            head = head.next;
+        }
+        else
+        {
+            Node n = head;
+            for (int i=0; i<index-1 ;i++)
+            {
+               n = n.next;
+            }
+            Node temp = n.next;
+            n.next = temp.next;
+            temp.next=null;
+            System.out.println("Item Deleted!");
+            
+        }
+       }
+       catch(Exception e)
+       {
+           System.out.println("Array index not present!  Delete Operation cannot be performed :(");
+       }
+       
+        
+    }
+    
     void show()
     {
         Node n = head;
-        int i=1;
+        int i=0;
         if (n == null)
         {
             System.out.println("LinkedList is Empty!");
